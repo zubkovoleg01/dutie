@@ -51,7 +51,7 @@ class App extends Component {
           onClick={() => this.displayCompleted(false)}
           className={this.state.viewCompleted ? "" : "active"}
         >
-          Incompleted
+          uncompleted
             </span>
       </div>
     );
@@ -92,16 +92,11 @@ class App extends Component {
       </li>
     ));
   };
-  // ///////////////////////////////////////////////////////////
 
-  ////add this after modal creation
+  // add this after modal creation
   toggle = () => {//add this after modal creation
     this.setState({ modal: !this.state.modal });//add this after modal creation
   };
-  // handleSubmit = item => {//add this after modal creation
-  //   this.toggle();//add this after modal creation
-  //   alert("save" + JSON.stringify(item));//add this after modal creation
-  // };
 
   // Submit an item
   handleSubmit = item => {
@@ -125,9 +120,6 @@ class App extends Component {
       .delete(`http://localhost:8000/api/tasks/${item.id}/`)
       .then(res => this.refreshList());
   };
-  // handleDelete = item => {//add this after modal creation
-  //   alert("delete" + JSON.stringify(item));//add this after modal creation
-  // };
 
   // Create item
   createItem = () => {
@@ -145,13 +137,13 @@ class App extends Component {
   render() {
     return (
       <main className="content">
-        <h1 className="text-black text-uppercase text-center my-4">Task Manager</h1>
+        <h1 className="text-black text-uppercase text-center my-4">DUTIE</h1>
         <div className="row ">
           <div className="col-md-6 col-sm-10 mx-auto p-0">
             <div className="card p-3">
               <div className="">
                 <button onClick={this.createItem} className="btn btn-primary">
-                  Add task
+                  ADD TASK
                     </button>
               </div>
               {this.renderTabList()}
